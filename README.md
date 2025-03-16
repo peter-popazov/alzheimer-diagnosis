@@ -15,39 +15,19 @@ demographics and includes medical, cognitive, and lifestyle features
 
 ## Machine Learning Models
 
-### Logistic Regression
+| Model                      | Accuracy | AUC   | Precision Class 0  | Recall Class 0 | Precision Class 1 | Recall Class 1  |
+|----------------------------|----------|-------|--------------------|----------------|--------------------|----------------|
+| Logistic Regression        | 0.8142   | 0.9025| 0.93               | 0.78           | 0.63               | 0.89           |
+| Deep Learning              | 0.8019   | 0.8857| 0.85               | 0.84           | 0.71               | 0.74           |
+| Random Forest              | 0.9412   | 0.9509| 0.95               | 0.96           | 0.93               | 0.90           |
+| Ensemble Learning (Stacking)| 0.9443  | 0.9315| 0.97               | 0.95           | 0.91               | 0.94           |
 
-**Purpose:** Binary classification (Alzheimer's diagnosis)
-
-**Hyperparameters:** L2 regularization, balanced class weights, 1000 iterations
-
-**Evaluation:** ~82% on training set and ~81% on validation set; f-1 score: 0-class - 0.84, 1-class - 0.77
-
-### Deep Learning
-
-**Purpose:** Improve accuracy by capturing complex patterns in data
-
-**Architecture:** Three hidden layers (64, 32, 16 neurons) with ReLU activation, batch normalization, dropout for
-regularization
-
-**Evaluation:** ~94% on training set and ~85% on validation set; f-1 score: 0-class - 0.87, 1-class - 0.75 (more
-training led to problems with overfitting)
-
-### Random Forest Classifier
-
-**Purpose:** Ensemble learning model to enhance prediction of just one decision tree
-
-**Hyperparameters:** 100 decision trees, max depth = 10, class balancing
-
-**Evaluation:** ~99% on training set and ~94% on validation set; f-1 score: 0-class - 0.95, 1-class - 0.91
 
 ## Conclusions
 
 1. _“Which machine learning method has the highest accuracy in the context of medical predictions?”_
 
-The most accurate was the random forest model with an accuracy of 98.78% on the training set and 93.72% on the test set,
-indicating good generalization. The small gap indicates that the model works well and generalizes effectively due to the
-effective use of several, namely 100 decision trees.
+The ensemble learning model showed the highest accuracy with an accuracy of 94.43%, but the random forest model with an accuracy of 98.78% on the current set is not far behind. The main reason for the small increase in accuracy in the ensemble learning model is the “weak” logistic regression and deep learning models.
 
 2. _“What was the impact of feature engineering on the prediction of neurological diseases?”_
 
